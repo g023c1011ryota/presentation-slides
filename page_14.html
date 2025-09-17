@@ -98,6 +98,29 @@
                 }
                 // 右側クリックは最後のページなので何もしない
             });
+            
+            // 動画読み込みエラーハンドリング
+            document.addEventListener('DOMContentLoaded', function() {
+                const videos = document.querySelectorAll('video');
+                videos.forEach((video, index) => {
+                    video.addEventListener('error', function(e) {
+                        console.log(`Video ${index + 1} error:`, e);
+                        const errorMsg = this.querySelector('p');
+                        if (errorMsg) {
+                            errorMsg.innerHTML = `動画読み込みエラー (ブラウザ: ${navigator.userAgent.includes('Chrome') ? 'Chrome' : 'Other'})<br>
+                                <small>GitHub Releasesからの動画読み込みに失敗しました。</small>`;
+                        }
+                    });
+                    
+                    video.addEventListener('loadstart', function() {
+                        console.log(`Video ${index + 1} started loading...`);
+                    });
+                    
+                    video.addEventListener('canplay', function() {
+                        console.log(`Video ${index + 1} can play!`);
+                    });
+                });
+            });
         });
     </script>
 </head>
@@ -138,8 +161,12 @@
                     <div class="p-2 flex-1 relative">
                         <video class="w-full h-full rounded-lg cursor-pointer" controls style="object-fit: contain;" 
                                ondblclick="this.requestFullscreen()">
-                            <source src="https://github.com/g023c1011ryota/presentation-slides/releases/download/v1.0.1/ScreenRecording_09-17-2025.06-16-10_1.mov" type="video/quicktime">
+                            <!-- Chrome優先: MP4を最初に -->
                             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            <!-- Safari対応: MOV -->
+                            <source src="https://github.com/g023c1011ryota/presentation-slides/releases/download/v1.0.1/ScreenRecording_09-17-2025.06-16-10_1.mov" type="video/quicktime">
+                            <!-- WebM for additional compatibility -->
+                            <source src="data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAAAptZGF0" type="video/mp4">
                             <p class="text-center text-gray-600 p-4">お使いのブラウザは動画の再生をサポートしていません。動画読み込みに問題がある可能性があります。</p>
                         </video>
                         <!-- Fullscreen button -->
