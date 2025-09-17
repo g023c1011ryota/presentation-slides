@@ -159,20 +159,13 @@
                         <p class="text-xs opacity-90">レシート撮影から献立提案まで</p>
                     </div>
                     <div class="p-2 flex-1 relative">
-                        <video class="w-full h-full rounded-lg cursor-pointer" controls preload="metadata" crossorigin="anonymous" style="object-fit: contain;" 
-                               ondblclick="this.requestFullscreen()">
-                            <!-- Chrome対応: MP4 -->
-                            <source src="https://github.com/g023c1011ryota/presentation-slides/releases/download/v1.0.1/ScreenRecording_09-17-2025.06-16-10_1.MP4" type="video/mp4">
-                            <!-- Safari対応: MOV -->
-                            <source src="https://github.com/g023c1011ryota/presentation-slides/releases/download/v1.0.1/ScreenRecording_09-17-2025.06-16-10_1.mov" type="video/quicktime">
-                            <p class="text-center text-gray-600 p-4">お使いのブラウザは動画の再生をサポートしていません。</p>
-                        </video>
-                        <!-- Fullscreen button -->
-                        <button onclick="document.querySelector('video').requestFullscreen()" 
-                                class="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
-                                title="全画面表示">
-                            <i class="fas fa-expand text-sm"></i>
-                        </button>
+                        <iframe class="w-full h-full rounded-lg" 
+                                src="https://www.youtube.com/embed/3IArPTBXmDo" 
+                                title="アプリ全体の流れ"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
 
@@ -183,20 +176,13 @@
                         <p class="text-xs opacity-90">AI画像認識の精度と速度</p>
                     </div>
                     <div class="p-2 flex-1 relative">
-                        <video class="w-full h-full rounded-lg cursor-pointer" controls preload="metadata" crossorigin="anonymous" style="object-fit: contain;" 
-                               ondblclick="this.requestFullscreen()">
-                            <!-- Chrome対応: MP4 -->
-                            <source src="https://github.com/g023c1011ryota/presentation-slides/releases/download/v1.0.1/ScreenRecording_09-17-2025.05-39-53_1.MP4" type="video/mp4">
-                            <!-- Safari対応: MOV -->
-                            <source src="https://github.com/g023c1011ryota/presentation-slides/releases/download/v1.0.1/ScreenRecording_09-17-2025.05-39-53_1.mov" type="video/quicktime">
-                            <p class="text-center text-gray-600 p-4">お使いのブラウザは動画の再生をサポートしていません。</p>
-                        </video>
-                        <!-- Fullscreen button -->
-                        <button onclick="this.previousElementSibling.requestFullscreen()" 
-                                class="absolute top-4 right-4 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
-                                title="全画面表示">
-                            <i class="fas fa-expand text-sm"></i>
-                        </button>
+                        <iframe class="w-full h-full rounded-lg" 
+                                src="https://www.youtube.com/embed/9f3fjHTkxLE" 
+                                title="レシート解析の詳細"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
